@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source env1/bin/activate
+if source env1/bin/activate:
+    echo "env1 there"
 
 cd /var/lib/jenkins/workspace/cicd_project/testing
 
