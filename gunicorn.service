@@ -4,7 +4,7 @@ Requires=gunicorn.socket
 After=network.target
 
 [Service]
-User=root
+User=ubuntu
 Group=www-data
 WorkingDirectory=/var/lib/jenkins/workspace/cicd_project/app
 ExecStart=/var/lib/jenkins/workspace/cicd_project/env1/bin/gunicorn --workers 3 --log-level debug --error-logfile /var/lib/jenkins/workspace/cicd_project/error.log --bind unix:/run/gunicorn.sock app.wsgi:application
