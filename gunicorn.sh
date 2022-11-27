@@ -1,8 +1,7 @@
 #!/bin/bash
 
-if source env1/bin/activate:
-    echo "env1 there"
-
+source env1/bin/activate:
+    
 cd /var/lib/jenkins/workspace/cicd_project/testing
 
 python3 manage.py makemigrations
