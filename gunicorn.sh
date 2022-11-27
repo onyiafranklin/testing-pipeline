@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source env/bin/activate
+source env1/bin/activate
 
 cd /var/lib/jenkins/workspace/cicd_project/testing
 

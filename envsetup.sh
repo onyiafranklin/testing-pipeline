@@ -1,13 +1,14 @@
 #!/bin/bash
 
-if [ -d "env" ] 
+if [ -d "env1" ] 
 then
     echo "Python virtual environment exists." 
 else
-    python3 -m venv env
+    sudo apt install python3-venv
+    python3 -m venv env1
 fi
 
-
+source env1/bin/activate
 pip3 install -r requirements.txt
 
 if [ -d "logs" ] 
