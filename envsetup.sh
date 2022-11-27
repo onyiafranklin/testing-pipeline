@@ -7,7 +7,6 @@ else
     python3 -m venv env
 fi
 
-# source env/bin/activate
 
 pip3 install -r requirements.txt
 
@@ -18,5 +17,3 @@ else
     mkdir logs
     touch logs/error.log logs/access.log
 fi
-
-sudo chmod -R 777 logs
