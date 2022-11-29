@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo cp -rf app.conf /etc/nginx/sites-available/testing
+sudo cp -rf app.conf /etc/nginx/sites-available/app
 chmod 710 /var/lib/jenkins/workspace/cicd_project
 
 sudo ln -s /etc/nginx/sites-available/testing /etc/nginx/sites-enabled
