@@ -10,8 +10,6 @@ resource "aws_instance" "AWS-instance" {
   instance_type = "t2.micro"
   tags = {
     Name = "Node1"
-  }
-
- 
-
+    }
+    
 }
