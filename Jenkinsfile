@@ -1,30 +1,34 @@
 pipeline{
     agent any
+    
     stages {
     
-        stage('Setup Python Virtual ENV'){
-       
-            steps  {
-                    sh '''
-                    chmod +x envsetup.sh
-                    ./envsetup.sh
-                    '''}
-        }
-        stage('Setup Gunicorn Setup'){
+        stage ("terraform init") {
+
             steps {
-                sh '''
-                chmod +x gunicorn.sh
-                ./gunicorn.sh
-                '''
+
+                sh ('terraform init')
+
             }
+
         }
-        stage('setup NGINX'){
+
+        stage ("terraform plan") {
+
             steps {
-                sh '''
-                chmod +x nginx.sh
-                ./nginx.sh
-                '''
-            }
+
+                sh ('terraform plan')
+
+           }
+
         }
-    }
+
+         stage ("terraform apply") {
+            steps {
+
+                sh ('terraform apply -auto-approve')
+
+           }
+
+        }
 }

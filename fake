@@ -1,0 +1,108 @@
+pipeline{
+    agent any
+    
+
+    stages {
+    
+        stage('ec2 instance spin up'){
+       
+            steps  {
+                    sh '''
+                    chmod +x main.tf
+                    ./envsetup.sh
+                    '''}
+        }
+        stage('Setup Gunicorn Setup'){
+            steps {
+                sh '''
+                chmod +x gunicorn.sh
+                ./gunicorn.sh
+                '''
+            }
+        
+        stage('Spine up ec2'){
+            steps {
+                sh '''
+                chmod +x provider.sh
+                ./provider.sh
+                '''
+            }
+        }
+        stage('setup NGINX'){
+            steps {
+                sh '''
+                chmod +x nginx.sh
+                ./nginx.sh
+                '''
+            }
+        }
+    }
+}
+
+pipeline {
+
+    agent any
+
+   
+
+    environment {
+
+        AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
+
+        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+
+    }
+
+   
+
+  stages {
+
+        stage('Checkout') {
+
+            steps {
+
+            checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/wehjey/jenkinstest.git']]])            
+
+          }
+
+        }
+
+       
+
+        stage ("terraform init") {
+
+            steps {
+
+                sh ('terraform init')
+
+            }
+
+        }
+
+       
+
+        stage ("terraform plan") {
+
+            steps {
+
+                sh ('terraform plan')
+
+           }
+
+        }
+
+       
+
+         stage ("terraform apply") {
+
+            steps {
+
+                sh ('terraform apply -auto-approve')
+
+           }
+
+        }
+
+    }
+
+}
