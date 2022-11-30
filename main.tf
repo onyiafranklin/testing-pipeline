@@ -11,5 +11,4 @@ resource "aws_instance" "AWS-instance" {
   tags = {
     Name = "Node1"
     }
-    
-}
+    key_name     = "mbo"
