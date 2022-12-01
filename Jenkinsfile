@@ -36,8 +36,8 @@ pipeline{
             steps {
 
                 sh 'pwd'
-                sh 'cd /home/ubuntu/testing-pipeline/DevopsProject/ui/comp; npm start'
-                sh 'cd /home/ubuntu/testing-pipeline/DevopsProject/api/ApiProject; python3 manage.py runserver 172.31.8.18:8000'
+                sh 'cd /var/lib/jenkins/workspace/cicd_project/DevopsProject/ui/comp; npm start'
+                sh '/var/lib/jenkins/workspace/cicd_project/DevopsProject/api/ApiProject; python3 manage.py runserver 172.31.8.18:8000'
 
              }
 
