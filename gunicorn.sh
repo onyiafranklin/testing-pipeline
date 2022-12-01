@@ -2,7 +2,7 @@
 
 source env1/bin/activate
     
-cd /var/lib/jenkins/workspace/cicd_project/testing
+cd /var/lib/jenkins/workspace/cicd_project/
 
 python3 manage.py makemigrations
 python3 manage.py migrate
