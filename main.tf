@@ -7,9 +7,9 @@ provider "aws"{
 resource "aws_instance" "AWS-instance" {
   count     = 1
   ami           = "ami-08c40ec9ead489470"
-  instance_type = "t2.micro"
+  instance_type = "t2.medium"
   tags = {
-    Name = "Node1"
+    Name = "group16-devops"
     }
     key_name     = "mbo"
   
