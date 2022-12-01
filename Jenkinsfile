@@ -36,7 +36,7 @@ pipeline{
             steps {
 
                 sh 'pwd'
-                sh 'cd /var/lib/jenkins/workspace/cicd_project/DevopsProject/ui/comp; npm start'
+                sh 'cd /var/lib/jenkins/workspace/cicd_project/DevopsProject/ui/comp; npm install; pip install django==2.1.15'
                 sh '/var/lib/jenkins/workspace/cicd_project/DevopsProject/api/ApiProject; python3 manage.py runserver 172.31.8.18:8000'
 
              }
