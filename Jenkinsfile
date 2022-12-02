@@ -34,7 +34,8 @@ pipeline{
         
         stage ("publish application") {
             steps {
-                sh './var/lib/jenkins/workspace/cicd_project/DevopsProject/api/ApiProject/start.sh'
+                sh 'cd /var/lib/jenkins/workspace/cicd_project/DevopsProject/api/ApiProject/; ./start.sh'
+                     
 
              }
 
