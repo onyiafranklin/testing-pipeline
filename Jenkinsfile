@@ -36,7 +36,7 @@ pipeline{
             steps {
 
                 sh 'pwd'
-                sh '/var/lib/jenkins/workspace/cicd_project/DevopsProject/api/ApiProject; python3 manage.py runserver 172.31.83.153:8000'
+                sh 'cd /var/lib/jenkins/workspace/cicd_project/DevopsProject/api/ApiProject; python3 manage.py runserver 172.31.83.153:8000'
 
              }
 
