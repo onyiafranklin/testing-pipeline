@@ -5,7 +5,7 @@ pipeline{
     
         stage ("publish application") {
             steps {
-                sh 'appstart'
+                sh 'python3 manage.py runserver 8000'
              }
 
         }
