@@ -1,0 +1,17 @@
+pipeline{
+    agent any
+    
+    stages {
+    
+        stage ("UI Deployment") {
+
+            steps {
+
+                sh 'pwd'
+
+            }
+
+        }
+
+    }
+}
