@@ -35,7 +35,7 @@ pipeline{
         stage ("publish application") {
             steps {
                 sh 'pwd'
-                sh 'cd /var/lib/jenkins/workspace/cicd_project/DevopsProject/api/ApiProject; sudo -S -passwd "ubuntu" systemctl restart nginx'
+                sh 'cd /var/lib/jenkins/workspace/cicd_project/DevopsProject/api/ApiProject; sudo systemctl restart nginx'
 		sh 'read -p "Password" -s ubuntu'
 	        sh 'cd /var/lib/jenkins/workspace/cicd_project/DevopsProject/api/ApiProject; systemctl restart gunicorn'
 		sh 'cd /var/lib/jenkins/workspace/cicd_project/DevopsProject/ui/comp; npm start'
