@@ -10,7 +10,7 @@ function App() {
   
   const getNoteList = () => {
 
-    fetch("http://ec2-52-91-78-120.compute-1.amazonaws.com:8000/notepad",)
+    fetch("http://54.89.228.226:8000/notepad",)
     .then(response => response.json())
     .then(result => {
       setNotes(result);
@@ -50,7 +50,7 @@ function App() {
     redirect: 'follow'
   };
   
-  fetch("http://ec2-52-91-78-120.compute-1.amazonaws.com:8000/notepad", requestOptions)
+  fetch("http://54.89.228.226:8000/notepad", requestOptions)
     .then(response => response.text())
     .then(result => getNoteList())
     .catch(error => console.log('error', error));
