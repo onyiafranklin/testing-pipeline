@@ -41,7 +41,6 @@ pipeline{
 				sh 'cd /var/lib/jenkins/workspace/cicd_project/DevopsProject/api/ApiProject; python3 manage.py migrate'
 				sh 'npm -version'
 				sh 'python3 --version'
-				sh 'gunicorn --version'
 				sh 'nginx -v'
 
              }
