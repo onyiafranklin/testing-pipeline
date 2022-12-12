@@ -14,7 +14,7 @@ const Sidebar = ({
   return (
     <div className="app-sidebar">
       <div className="app-sidebar-header">
-        <h1>Notes</h1>
+        <h1 style="background-color:Tomato;">Notes</h1>
         <button onClick={onAddNote}>Add</button>
       </div>
       <div className="app-sidebar-notes">
